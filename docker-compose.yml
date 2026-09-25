@@ -1,0 +1,16 @@
+services:
+  climatcheck:
+    build: .
+    ports:
+      - "19006:19006"
+      - "19000:19000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      # Bind-mounted source needs polling for reliable file-watching
+      # across Docker Desktop (Mac/Windows) VM boundaries.
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+    stdin_open: true
+    tty: true

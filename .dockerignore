@@ -1,0 +1,9 @@
+node_modules
+.expo
+dist
+web-build
+npm-debug.*
+.git
+.gitignore
+*.orig.*
+.DS_Store
